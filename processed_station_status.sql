@@ -1,4 +1,4 @@
-CREATE TABLE model_stg.processed_station_status AS
+CREATE or replace TABLE model_stg.processed_station_status AS
 WITH t AS (
     SELECT ville, unnest(stations) AS stations, last_updated, ttl, version
     FROM raw_gbfs.raw_station_status_2
